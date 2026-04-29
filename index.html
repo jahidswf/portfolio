@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Md Jahidul Islam — Portfolio</title>
@@ -27,7 +28,6 @@
     overflow-x: hidden;
   }
 
-  /* ── NOISE TEXTURE ── */
   body::before {
     content: '';
     position: fixed;
@@ -38,7 +38,6 @@
     opacity: 0.4;
   }
 
-  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -64,6 +63,7 @@
     display: flex;
     gap: 2.5rem;
     list-style: none;
+    align-items: center;
   }
 
   .nav-links a {
@@ -78,7 +78,13 @@
 
   .nav-links a:hover { color: var(--gold); }
 
-  /* ── HERO ── */
+  .lang-link {
+    color: var(--gold) !important;
+    border: 1px solid rgba(201,168,76,0.45);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+  }
+
   .hero {
     min-height: 100vh;
     display: flex;
@@ -203,7 +209,6 @@
     letter-spacing: 0.08em;
   }
 
-  /* ── SECTIONS ── */
   section {
     padding: 6rem 4rem;
     position: relative;
@@ -228,7 +233,6 @@
     line-height: 1.15;
   }
 
-  /* ── ABOUT ── */
   .about { background: var(--navy-light); }
 
   .about-grid {
@@ -274,7 +278,6 @@
     font-weight: 400;
   }
 
-  /* ── SKILLS ── */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -332,7 +335,6 @@
     border-color: rgba(201,168,76,0.25);
   }
 
-  /* ── PROJECTS ── */
   .projects { background: var(--navy-light); }
 
   .projects-grid {
@@ -396,7 +398,6 @@
 
   .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
-  /* ── EXPERIENCE ── */
   .timeline { position: relative; padding-left: 2rem; }
 
   .timeline::before {
@@ -475,7 +476,6 @@
     font-size: 0.75rem;
   }
 
-  /* ── CERTIFICATIONS ── */
   .certs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -506,7 +506,6 @@
     line-height: 1.4;
   }
 
-  /* ── CONTACT ── */
   .contact {
     text-align: center;
     background: var(--navy-light);
@@ -534,7 +533,6 @@
   .contact-item:hover { color: var(--gold); }
   .contact-item span { font-size: 1.1rem; }
 
-  /* ── FOOTER ── */
   footer {
     text-align: center;
     padding: 2rem;
@@ -543,7 +541,6 @@
     border-top: 1px solid rgba(255,255,255,0.04);
   }
 
-  /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
@@ -560,10 +557,9 @@
     transform: translateY(0);
   }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 1.2rem 1.5rem; }
-    .nav-links { gap: 1.5rem; }
+    .nav-links { gap: 1.5rem; flex-wrap: wrap; justify-content: flex-end; }
     section { padding: 4rem 1.5rem; }
     .hero { padding: 7rem 1.5rem 3rem; }
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -574,7 +570,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">J. Islam</div>
   <ul class="nav-links">
@@ -583,12 +578,10 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
-      <li><a href="de.html">DE</a></li>
-
+    <li><a href="de.html" class="lang-link">DE</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg-circle"></div>
   <div class="hero-content">
@@ -620,7 +613,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about" id="about">
   <div class="reveal">
     <div class="section-label">Who I Am</div>
@@ -661,7 +653,6 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="reveal">
     <div class="section-label">What I Work With</div>
@@ -734,7 +725,6 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section class="projects" id="projects">
   <div class="reveal">
     <div class="section-label">Academic Work</div>
@@ -798,7 +788,6 @@
   </div>
 </section>
 
-<!-- INDEPENDENT PROJECT -->
 <section id="experience">
   <div class="reveal">
     <div class="section-label">Self-Initiated</div>
@@ -817,7 +806,6 @@
     </div>
   </div>
 
-  <!-- WORK EXPERIENCE -->
   <div class="reveal">
     <div class="section-label">Professional Background</div>
     <h2 class="section-title">Work Experience</h2>
@@ -848,7 +836,6 @@
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
 <section style="background: var(--navy-light); padding: 5rem 4rem;">
   <div class="reveal">
     <div class="section-label">Credentials</div>
@@ -878,7 +865,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="reveal">
     <div class="section-label">Let's Connect</div>
@@ -908,7 +894,6 @@
 </footer>
 
 <script>
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -920,7 +905,6 @@
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 
-  // Nav active state
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
@@ -929,7 +913,9 @@
       if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
     });
     navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+      if (!a.classList.contains('lang-link')) {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+      }
     });
   });
 </script>
